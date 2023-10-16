@@ -7,6 +7,8 @@ import { AllTopicsDropdown, TitleSearchBar } from "../AllPostFilterBar";
 
 
 
+
+
 export const AllPostsList = () => {
 
     const [allPosts, setAllPosts] = useState([])
@@ -85,9 +87,13 @@ export const AllPostsList = () => {
             <h2>Search Title</h2>
             <TitleSearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
 
-            {filteredPosts.map((post) => (
-                <AllPosts key={post.id} post={post} allTopics={allTopics} />
-            ))}
+            {filteredPosts.map( post => {
+                return (
+                    
+                        <AllPosts key={post.id} post={post} allTopics={allTopics} />
+                    
+                )
+                })}
 
 
             </div>
